@@ -1,4 +1,6 @@
 Chuck::Application.routes.draw do
+  resources :organizations
+
   get "static_pages/home"
 
   get "static_pages/about"

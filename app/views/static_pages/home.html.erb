@@ -6,12 +6,23 @@
           <li class="active"><a href="#">Home</a></li>
           <li><a href="#">About</a></li>
           <li><a href="#">Contact</a></li>
+          <% if user_signed_in? %>
+            <%= link_to "Sign Out" , destroy_user_session_path, :method => :delete %> 
+
+          <% else %> 
+            <%= link_to "Sign In" , new_user_session_path%>
+
+          <% end %>
         </ul>
         <h3 class="muted">Project name</h3>
       </div>
 
       <hr>
+      <% if user_signed_in? %> 
 
+      <h2> <%= puts current_user %> signed in </h2>
+
+      <%  else %>
       <div class="jumbotron">
         <h1>Super awesome marketing speak!</h1>
         <p class="lead">Cras justo odio, dapibus ac facilisis in, egestas eget quam. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
@@ -43,7 +54,7 @@
           <p>Maecenas sed diam eget risus varius blandit sit amet non magna.</p>
         </div>
       </div>
-
+      <% end %>
       <hr>
 
       <div class="footer">

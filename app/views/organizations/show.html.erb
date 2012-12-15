@@ -1,0 +1,40 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @organization.name %>
+</p>
+
+<p>
+  <b>Url:</b>
+  <%= @organization.url %>
+</p>
+
+<p>
+  <b>Desc:</b>
+  <%= @organization.desc %>
+</p>
+
+<p>
+  <b>Image filename:</b>
+  <%= @organization.image_filename %>
+</p>
+
+<p>
+  <b>Image contenttype:</b>
+  <%= @organization.image_contenttype %>
+</p>
+
+<p>
+  <b>Image filesize:</b>
+  <%= @organization.image_filesize %>
+</p>
+
+<p>
+  <b>Image updated:</b>
+  <%= @organization.image_updated %>
+</p>
+
+
+<%= link_to 'Edit', edit_organization_path(@organization) %> |
+<%= link_to 'Back', organizations_path %>
