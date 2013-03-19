@@ -1,7 +1,8 @@
 source 'https://rubygems.org'
 
-gem 'rails', '3.2.8'
+gem 'rails', '3.2.13'
 gem 'bootstrap-sass', '2.1'
+gem 'simple_form'
 
 gem 'devise'
 gem 'omniauth-facebook'
