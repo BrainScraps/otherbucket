@@ -3,6 +3,15 @@
 <%= simple_form_for(resource, :as => resource_name, :url => registration_path(resource_name), html: {class: 'form-horizontal'}) do |f| %>
   <%= f.error_notification %>
 
+  <%- if devise_mapping.omniauthable? %>
+  <%- resource_class.omniauth_providers.each do |provider| %>
+
+  <div class="container">
+
+    <%= link_to "Sign up with #{provider.to_s.titleize}", omniauth_authorize_path(resource_name, provider), class: "btn btn-primary" %> <br> <h3> -or- </h3></div>
+  <% end -%>
+<% end -%>
+
   <div class="form-inputs">
   	<%= f.input :fname, label: 'First Name:', :required => true %>
     <%= f.input :email, :required => true, :autofocus => true %>
@@ -11,7 +20,7 @@
   </div>
 
   <div class="form-actions">
-    <%= f.button :submit, "Sign up", class: 'btn btn-primary' %>
+    <%= f.button :submit, "Create Account", class: 'btn btn-primary' %>
   </div>
 <% end %>
 

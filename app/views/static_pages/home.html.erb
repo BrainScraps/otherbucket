@@ -1,33 +1,4 @@
 
-    <div class="container">
-
-      <div class="masthead">
-        <ul class="nav nav-pills pull-right">
-          <li class="active"><%= link_to 'Home', root_path %></li>
-          <li><a href="#">About</a></li>
-          <li><a href="#">Contact</a></li>
-
-          
-
-          <% if user_signed_in? %>
-
-            <li>
-            <%= link_to "Sign Out" , destroy_user_session_path, :method => :delete %> 
-            </li>
-          <% else %> 
-            <li>
-            <%= link_to "Sign In" , new_user_session_path%>
-          </li>
-          <% end %>
-        </ul>
-        <h3 class="Brand">OtherBucket</h3>
-      </div>
-      <div class="container"> <% flash.each do |name, msg| %> 
-          <%= content_tag(:div, msg, :class => "alert alert-#{name}")%> 
-          <% end %> 
-
-      </div>
-      <hr>
       <% if user_signed_in? %> 
 
       <h3> Hello, <%= current_user.fname %>! </h3>
@@ -69,14 +40,4 @@
         </div>
       </div>
       <% end %>
-      <hr>
-
-      <div class="footer">
-        <p>&copy; Company 2012</p>
-      </div>
-
-    </div> <!-- /container -->
-
-    <!-- Le javascript
-    ================================================== -->
-    <!-- Placed at the end of the document so the pages load faster -->
+     

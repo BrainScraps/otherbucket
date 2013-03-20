@@ -1,4 +1,7 @@
 Chuck::Application.routes.draw do
+  resources :pledges
+
+
   resources :supports
 
   resources :organizations
